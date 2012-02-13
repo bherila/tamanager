@@ -105,7 +105,7 @@ namespace TAManager
             currentApplication.OtherComments = TextBox4.Text;
             currentApplication.CoursesTaken = (
                 from x in previouscourses
-                select new CourseTaken() {
+                select new TAManager.Data.App.CourseTaken() {
                     CourseName = x.Name,
                     Grade = x.Grade
                 }).ToList();
