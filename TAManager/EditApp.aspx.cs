@@ -23,6 +23,7 @@ namespace TAManager
 
         protected override void OnInit(EventArgs e) {
             base.OnInit(e);
+            var DataContainer = TAManager.Data.DataContainer.Instance();
 
             // prevent caching
             Response.Cache.SetNoStore();
@@ -110,6 +111,7 @@ namespace TAManager
                     Grade = x.Grade
                 }).ToList();
             currentApplication.Preferences = String.Join(",", fruit);
+            DataContainer.Instance().Save();
         }
 
         protected override void OnLoad(EventArgs e) {
@@ -132,6 +134,7 @@ namespace TAManager
         }
 
         protected override void OnPreRender(EventArgs e) {
+            var DataContainer = TAManager.Data.DataContainer.Instance();
 
             //if (fruit.Count == 0)
             //    fruit = (from c in TAManager.Data.DataContainer.Courses
@@ -141,7 +144,7 @@ namespace TAManager
             courselist.DataSource = fruit;
             courselist.DataBind();
 
-            var availableCourses = (from c in TAManager.Data.DataContainer.Courses
+            var availableCourses = (from c in DataContainer.Courses
                                    where !fruit.Contains(c.BannerName)
                                    select c.BannerName).ToList();
 

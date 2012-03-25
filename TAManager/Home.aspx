@@ -3,6 +3,7 @@
 <script runat="server">
     protected override void OnLoad(EventArgs e) {
         base.OnLoad(e);
+        
         myapps.ItemDataBound += (o, args) => {
             if (args.Item != null) {
                 /* get the data item corresponding to this row */
@@ -42,7 +43,14 @@
         DataValueField="Name">
     </asp:DropDownList>
 
-    <h2>My Courses</h2>
 
+    <asp:PlaceHolder runat="server" id="m_courseplaceholder">
+    <h2>My Courses</h2>
+    <asp:DataGrid EnableViewState="false" runat="server" ID="coursegrid" AutoGenerateColumns="false">
+        <Columns>
+            <asp:HyperLinkColumn DataTextField="BannerName" HeaderText="Banner Name" DataNavigateUrlField="BannerName" DataNavigateUrlFormatString="ViewCourse.aspx?course={0}" />
+        </Columns>
+    </asp:DataGrid>
+    </asp:PlaceHolder>
 
 </asp:Content>

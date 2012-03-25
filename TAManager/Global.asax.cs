@@ -13,41 +13,7 @@ namespace TAManager
 
         void Application_Start(object sender, EventArgs e) {
             // Code that runs on application startup
-            DataContainer.HiringPeriods.Add(new HiringPeriod() {
-                Open = DateTime.Now,
-                Close = DateTime.Now.AddMonths(1),
-                Type = ApplicationType.HTA,
-                Name = "2012Fall HTA"
-            });
-            DataContainer.HiringPeriods.Add(new HiringPeriod() {
-                Open = DateTime.Now,
-                Close = DateTime.Now.AddMonths(1),
-                Type = ApplicationType.HTA,
-                Name = "2012Fall UTA"
-            });
-            DataContainer.HiringPeriods.Add(new HiringPeriod() {
-                Open = DateTime.Now,
-                Close = DateTime.Now.AddMonths(1),
-                Type = ApplicationType.HTA,
-                Name = "2012S UTA"
-            });
-            DataContainer.HiringPeriods.Add(new HiringPeriod() {
-                Open = DateTime.Now,
-                Close = DateTime.Now.AddMonths(1),
-                Type = ApplicationType.HTA,
-                Name = "2011F UTA"
-            });
-            DataContainer.HiringPeriods.Add(new HiringPeriod() {
-                Open = DateTime.Now,
-                Close = DateTime.Now .AddMonths(1),
-                Type = ApplicationType.HTA,
-                Name = "2011S UTA"
-            });
-
-            DataContainer.Courses.Add(new Course() { BannerName = "CS15" });
-            DataContainer.Courses.Add(new Course() { BannerName = "CS16" });
-            DataContainer.Courses.Add(new Course() { BannerName = "CS32" });
-            DataContainer.Courses.Add(new Course() { BannerName = "CS123" });
+            DataContainer.Load();
         }
 
         void Application_End(object sender, EventArgs e) {

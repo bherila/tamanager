@@ -10,60 +10,60 @@
 namespace TAManager {
     
     
-    public partial class Home {
+    public partial class ViewCourse {
         
         /// <summary>
-        /// myapps_h2 control.
+        /// appgrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl myapps_h2;
+        protected global::System.Web.UI.WebControls.GridView appgrid;
         
         /// <summary>
-        /// myapps control.
+        /// prefs_placeholder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid myapps;
+        protected global::System.Web.UI.WebControls.PlaceHolder prefs_placeholder;
         
         /// <summary>
-        /// new_app_button control.
+        /// prefs_header control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton new_app_button;
+        protected global::System.Web.UI.WebControls.Literal prefs_header;
         
         /// <summary>
-        /// new_app_type control.
+        /// prefs_body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList new_app_type;
+        protected global::System.Web.UI.WebControls.Repeater prefs_body;
         
         /// <summary>
-        /// m_courseplaceholder control.
+        /// prefs_footer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder m_courseplaceholder;
+        protected global::System.Web.UI.WebControls.Literal prefs_footer;
         
         /// <summary>
-        /// coursegrid control.
+        /// savebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid coursegrid;
+        protected global::System.Web.UI.WebControls.Button savebtn;
     }
 }

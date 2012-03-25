@@ -16,8 +16,10 @@ namespace TAManager.Data
             Preferences = String.Empty;
         }
 
+        
         [XmlAttribute]
         public ApplicationType Type { get; set; }
+
 
         [XmlAttribute]
         public ApplicationStatus Status { get; set; }
@@ -64,6 +66,10 @@ namespace TAManager.Data
 
         [XmlAttribute]
         public string Preferences { get; set; }
+
+        [XmlText]
+        public string HTAComment { get; set; }
+
 
         public int CompareTo(App other) {
             //if (this.Semester.Length != 5 || other.Semester.Length != 5) {

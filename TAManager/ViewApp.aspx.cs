@@ -15,6 +15,7 @@ namespace TAManager
 
         protected override void OnInit(EventArgs e) {
             base.OnInit(e);
+            var DataContainer = TAManager.Data.DataContainer.Instance();
 
             // prevent caching
             Response.Cache.SetNoStore();

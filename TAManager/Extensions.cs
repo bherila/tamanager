@@ -25,5 +25,13 @@ namespace TAManager
             }
         }
 
+        public static bool isAdmin(this System.Web.UI.Page p)
+        {
+            object isadmin = p.Session["isadmin"];
+            if (isadmin == null)
+                return false;
+            return (bool)isadmin;
+        }
+
     }
 }

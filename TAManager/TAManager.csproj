@@ -61,6 +61,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="ViewApp.aspx" />
+    <Content Include="ViewCourse.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="ViewApp.aspx.designer.cs">
       <DependentUpon>ViewApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCourse.aspx.cs">
+      <DependentUpon>ViewCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCourse.aspx.designer.cs">
+      <DependentUpon>ViewCourse.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

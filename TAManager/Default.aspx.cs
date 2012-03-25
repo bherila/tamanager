@@ -14,7 +14,8 @@ namespace TAManager
         }
 
         protected void submitCredentials(object sender, EventArgs e) {
-            var users = (from x in TAManager.Data.DataContainer.Users
+            var container = TAManager.Data.DataContainer.Instance();
+            var users = (from x in container.Users
                        where x.Login.Equals(UsernameTextbox.Text, StringComparison.OrdinalIgnoreCase)
                        select x).ToList();
 
@@ -28,17 +29,23 @@ namespace TAManager
             if (PasswordTextbox.Text == user.Password) {
                 Session["mustchangepassword"] = true;
                 Session["currentuser"] = user.Login;
+                Session["isadmin"] = user.IsAdmin;
             }
-            else if (PasswordTextbox.Text == user.Password.hashPassword()) {
+            else if (PasswordTextbox.Text.hashPassword() == user.Password)
+            {
                 Session["mustchangepassword"] = false;
                 Session["currentuser"] = user.Login;
+                Session["isadmin"] = user.IsAdmin;
             }
             else {
                 credentialValidator.IsValid = false;
                 return;
             }
 
-            Response.Redirect("Home.aspx"); 
+            if (string.IsNullOrEmpty(Request["redir"]))
+                Response.Redirect("Home.aspx");
+            else
+                Response.Redirect(Request["redir"]);
             
         }
     }
