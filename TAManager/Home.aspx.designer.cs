@@ -31,15 +31,6 @@ namespace TAManager {
         protected global::System.Web.UI.WebControls.DataGrid myapps;
         
         /// <summary>
-        /// new_app_button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton new_app_button;
-        
-        /// <summary>
         /// new_app_type control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace TAManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList new_app_type;
+        
+        /// <summary>
+        /// new_app_button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton new_app_button;
         
         /// <summary>
         /// m_courseplaceholder control.

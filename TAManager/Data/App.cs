@@ -6,8 +6,8 @@ using System.Xml.Serialization;
 
 namespace TAManager.Data
 {
-    public enum ApplicationType { HTA, UTA }
     public enum ApplicationStatus { InProgress, Submitted, Hired }
+
 
     public class App : IComparable<App>
     {
@@ -16,9 +16,8 @@ namespace TAManager.Data
             Preferences = String.Empty;
         }
 
-        
         [XmlAttribute]
-        public ApplicationType Type { get; set; }
+        public string Type { get; set; }
 
 
         [XmlAttribute]
@@ -66,10 +65,6 @@ namespace TAManager.Data
 
         [XmlAttribute]
         public string Preferences { get; set; }
-
-        [XmlText]
-        public string HTAComment { get; set; }
-
 
         public int CompareTo(App other) {
             //if (this.Semester.Length != 5 || other.Semester.Length != 5) {

@@ -18,28 +18,37 @@
         }
     });
     $(document).AjaxReady(function () {
-        // Wow! .. One line of code to make the unordered list drag/sortable!
+        $('#fruit_list').sortable();
+    });
+    $(document).ready(function () {
         $('#fruit_list').sortable();
     });
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-<asp:GridView runat="server" ID="appgrid" AutoGenerateColumns="false">
+<h1>View Course</h1>
+<p><a href="Home.aspx?rid=<%= Guid.NewGuid().ToString("N") %>"><b>Return to portal</b></a></p>
+<asp:ScriptManager ID="ScriptManager1" runat="server" />
+<p>
+<asp:DataGrid runat="server" ID="appgrid" AutoGenerateColumns="false" CssClass="table table-bordered table-striped">
 <Columns>
-    <asp:BoundField HeaderText="Applicant Name" DataField="User" />
-    <asp:BoundField HeaderText="Why TA?" DataField="WhyTA" />
-    <asp:BoundField HeaderText="Experiences" DataField="Experiences" />
-    <asp:BoundField HeaderText="Probable Course Schedule" DataField="ProbableSchedule" />
-    <asp:BoundField HeaderText="Applicant Comments" DataField="OtherComments" />
-    <asp:BoundField HeaderText="Essay" DataField="Essay" />
-    <asp:BoundField HeaderText="Date Submitted" DataField="DateCompleted" />
-    <asp:BoundField HeaderText="HTA Comment" DataField="HTAComment" />
+    <asp:BoundColumn HeaderText="Applicant Name" DataField="User" />
+    <asp:BoundColumn HeaderText="Why TA?" DataField="WhyTA" />
+    <asp:BoundColumn HeaderText="Experiences" DataField="Experiences" />
+    <asp:BoundColumn HeaderText="Probable Course Schedule" DataField="ProbableSchedule" />
+    <asp:BoundColumn HeaderText="Applicant Comments" DataField="OtherComments" />
+    <asp:BoundColumn HeaderText="Essay" DataField="Essay" />
+    <asp:BoundColumn HeaderText="Date Submitted" DataField="DateCompleted" />
 </Columns>
-</asp:GridView>
+</asp:DataGrid>
+</p>
 
+<div class="row">
+<div class="span3">
 <h2>Hiring Preferences</h2>
-<p>Drag and drop the applicants in the list below to define your hiring preferences.</p>
+<p>Drag and drop the applicants in the list below to define your hiring preferences, then click Save Changes below. 
+The grid above will update when you click Save Changes.</p>
 <asp:PlaceHolder runat="server" ID="prefs_placeholder">
     <asp:Literal ID="prefs_header" runat="server" Text='<ul ID="fruit_list">' />
     <asp:Repeater ID="prefs_body" runat="server">
@@ -49,8 +58,24 @@
     </asp:Repeater>
     <asp:Literal ID="prefs_footer" runat="server" Text='</ul>' />
 </asp:PlaceHolder>
+</div>
+</div>
 
 <asp:Button runat="server" ID="savebtn" Text="Save Changes" />
 
+<script type="text/javascript">
+    prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_endRequest(EndRequest);
+    function EndRequest(sender, args) {
+        $(document).AjaxReady();
+    }
+</script>
 
 </asp:Content>
+<script runat="server">
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+        appgrid.PreRender += TAManager.Extensions.GridViewHtmlFix;
+    }
+</script>

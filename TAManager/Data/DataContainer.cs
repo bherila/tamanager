@@ -10,7 +10,7 @@ namespace TAManager.Data
 
     public class HiringPeriod
     {
-        public ApplicationType Type { get; set; }
+        public string Type { get; set; }
         public string Name { get; set; } // e.g. 2011F
         public DateTime Open { get; set; }
         public DateTime Close { get; set; }
@@ -65,35 +65,35 @@ namespace TAManager.Data
                     {
                         Open = DateTime.Now,
                         Close = DateTime.Now.AddMonths(1),
-                        Type = ApplicationType.HTA,
+                        Type = "HTA",
                         Name = "2012Fall HTA"
                     });
                     cdata.HiringPeriods.Add(new HiringPeriod()
                     {
                         Open = DateTime.Now,
                         Close = DateTime.Now.AddMonths(1),
-                        Type = ApplicationType.HTA,
+                        Type = "HTA",
                         Name = "2012Fall UTA"
                     });
                     cdata.HiringPeriods.Add(new HiringPeriod()
                     {
                         Open = DateTime.Now,
                         Close = DateTime.Now.AddMonths(1),
-                        Type = ApplicationType.HTA,
+                        Type = "HTA",
                         Name = "2012S UTA"
                     });
                     cdata.HiringPeriods.Add(new HiringPeriod()
                     {
                         Open = DateTime.Now,
                         Close = DateTime.Now.AddMonths(1),
-                        Type = ApplicationType.HTA,
+                        Type = "HTA",
                         Name = "2011F UTA"
                     });
                     cdata.HiringPeriods.Add(new HiringPeriod()
                     {
                         Open = DateTime.Now,
                         Close = DateTime.Now.AddMonths(1),
-                        Type = ApplicationType.HTA,
+                        Type = "HTA",
                         Name = "2011S UTA"
                     });
 
@@ -110,7 +110,6 @@ namespace TAManager.Data
                         Login = "twd",
                         Password = "twd".hashPassword()
                     });
-
 
                     cdata.Save();
                 }

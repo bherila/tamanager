@@ -25,6 +25,7 @@ namespace TAManager.Data
             set;
         }
 
+
         [XmlAttribute("year")]
         public string Year {
             get;
@@ -63,6 +64,9 @@ namespace TAManager.Data
 
         [XmlArray("hta")]
         public List<string> HTAs { get; set; }
+
+        [XmlAttribute]
+        public string HiringPreferences { get; set; } // comma separated list of CS logins
     }
 
 }

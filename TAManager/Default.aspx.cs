@@ -9,6 +9,16 @@ namespace TAManager
 {
     public partial class Default : System.Web.UI.Page
     {
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            if (Request["signout"] == "true")
+            {
+                Session.Abandon();
+                Response.Redirect("Default.aspx?signout=done");
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e) {
 
         }

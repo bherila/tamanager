@@ -23,7 +23,10 @@ namespace TAManager
 
         protected override void OnInit(EventArgs e) {
             base.OnInit(e);
+            this.requireLogin();
+
             var DataContainer = TAManager.Data.DataContainer.Instance();
+            TextBox2.Attributes["placeholder"] = "e.g. CSCIXXXX";
 
             // prevent caching
             Response.Cache.SetNoStore();
@@ -54,7 +57,7 @@ namespace TAManager
                                    orderby x.CourseName ascending
                                    select new PreviousCourse() {
                                        Grade = x.Grade,
-                                       Name = x.CourseName
+                                       Name = x.CourseName.ToUpper()
                                    }).ToList();
                 fruit = currentApplication.Preferences.Split(',').Where(a=>a.Length>0).ToList(); 
             }
@@ -64,7 +67,7 @@ namespace TAManager
                 fruit.AddRange(f.Split(','));
             }
             
-            courseaddbutton.Click += (o, args) => { 
+            courseaddbutton.ServerClick += (o, args) => { 
                 fruit.Add(courses2add.SelectedItem.Value);
                 courses2add.SelectedIndex = -1; 
                 courses2add.Focus();
@@ -91,13 +94,15 @@ namespace TAManager
                 currentApplication.Status = ApplicationStatus.Submitted;
                 currentApplication.DateCompleted = DateTime.Now;
                 Save();
-                Response.Redirect("Home.aspx?nocache=" + Guid.NewGuid().ToString("N"));
+                Session["message"] = "Your app was saved and submitted at " + DateTime.Now;
+                Response.Redirect("Home.aspx?success=true&nocache=" + Guid.NewGuid().ToString("N"));
             }
         }
 
         void SaveButton_Click(object sender, EventArgs e) {
             Save();
-            Response.Redirect("Home.aspx?nocache=" + Guid.NewGuid().ToString("N")); 
+            Session["message"] = "Your app was saved at " + DateTime.Now;
+            Response.Redirect("Home.aspx?success=true&nocache=" + Guid.NewGuid().ToString("N")); 
         }
 
         private void Save() {
@@ -126,10 +131,12 @@ namespace TAManager
             if (Page.IsValid) {
                 PreviousCourse p = new PreviousCourse();
                 p.Grade = GradeDropDown.SelectedItem.Value;
-                p.Name = TextBox2.Text;
+                p.Name = TextBox2.Value;
                 previouscourses.Add(p);
-                TextBox2.Text = "";
-                TextBox2.Focus(); 
+                TextBox2.Value = "";
+                TextBox2.Focus();
+
+                previouscourses = (previouscourses.OrderBy(a => a.Name).ToList());
             }
         }
 

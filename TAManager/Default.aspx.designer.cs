@@ -13,6 +13,15 @@ namespace TAManager {
     public partial class Default {
         
         /// <summary>
+        /// credentialValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator credentialValidator;
+        
+        /// <summary>
         /// UsernameTextbox control.
         /// </summary>
         /// <remarks>
@@ -29,14 +38,5 @@ namespace TAManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PasswordTextbox;
-        
-        /// <summary>
-        /// credentialValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator credentialValidator;
     }
 }

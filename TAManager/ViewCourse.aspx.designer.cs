@@ -13,13 +13,22 @@ namespace TAManager {
     public partial class ViewCourse {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// appgrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView appgrid;
+        protected global::System.Web.UI.WebControls.DataGrid appgrid;
         
         /// <summary>
         /// prefs_placeholder control.

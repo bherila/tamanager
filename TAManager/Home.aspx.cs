@@ -12,8 +12,7 @@ namespace TAManager
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.currentUser()))
-                Response.Redirect("Default.aspx?not_logged_in");
+            this.requireLogin();
 
             // myapps_h2.Visible = false;
             var DataContainer = TAManager.Data.DataContainer.Instance();
@@ -34,10 +33,16 @@ namespace TAManager
             myapps.DataSource = apps;
             myapps.DataBind();
 
-
             var mycourses = (from x in DataContainer.Courses
                              where x.HTAs.Contains(this.currentUser())
-                             select x).ToList();
+                             select new
+                             {
+                                 x.BannerName,
+                                 x.Year,
+                                 Count = (from y in DataContainer.Applications
+                                          where y.Preferences.Contains(x.BannerName)
+                                          select y).Count()
+                             }).ToList();
             if (mycourses.Count > 0)
             {
                 m_courseplaceholder.Visible = true;

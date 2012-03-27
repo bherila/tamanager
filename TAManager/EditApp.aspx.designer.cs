@@ -40,13 +40,13 @@ namespace TAManager {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator WhyTAValidator;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// PreviousCourseValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.CustomValidator PreviousCourseValidator;
         
         /// <summary>
         /// m_coursegrid control.
@@ -58,13 +58,13 @@ namespace TAManager {
         protected global::System.Web.UI.WebControls.GridView m_coursegrid;
         
         /// <summary>
-        /// Panel1 control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// TextBox2 control.
@@ -73,7 +73,7 @@ namespace TAManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextBox2;
         
         /// <summary>
         /// GradeDropDown control.
@@ -94,15 +94,6 @@ namespace TAManager {
         protected global::System.Web.UI.WebControls.Button addpreviouscoursebutton;
         
         /// <summary>
-        /// PreviousCourseValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator PreviousCourseValidator;
-        
-        /// <summary>
         /// TextBox3 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +103,22 @@ namespace TAManager {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// UpdatePanel2 control.
+        /// TACoursesValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.WebControls.CustomValidator TACoursesValidator;
+        
+        /// <summary>
+        /// up2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up2;
         
         /// <summary>
         /// courselist control.
@@ -154,7 +154,7 @@ namespace TAManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button courseaddbutton;
+        protected global::System.Web.UI.HtmlControls.HtmlButton courseaddbutton;
         
         /// <summary>
         /// CompareValidator1 control.
@@ -164,15 +164,6 @@ namespace TAManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-        
-        /// <summary>
-        /// TACoursesValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator TACoursesValidator;
         
         /// <summary>
         /// TextBox4 control.
